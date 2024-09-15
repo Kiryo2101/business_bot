@@ -60,7 +60,7 @@ class FeedbackModal(discord.ui.Modal, title="ส่งข้อความไ�
         self.add_item(self.message_input)
 
     async def on_submit(self, interaction: discord.Interaction):
-        await self.recipient.send(f"มีคนฝากบอกว่า: {self.message_input.value}")
+        await self.recipient.send(f"มีคนฝากบอกว่า:\n{self.message_input.value}")
         await interaction.response.send_message(f"ส่ง '{self.message_input.value}' ไปหา <@{self.recipient.id}>", ephemeral=True)
         
 class MemberSelect(Select):
